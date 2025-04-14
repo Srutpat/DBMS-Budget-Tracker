@@ -1,0 +1,386 @@
+2025-04-09 05:07:47 - Session user_id: Not set
+2025-04-09 05:07:47 - No user_id found in session
+2025-04-09 05:07:47 - Email not found. Skipping mail sending.
+2025-04-09 05:11:08 - Session user_id: Not set
+2025-04-09 05:11:08 - No user_id found in session
+2025-04-09 05:11:08 - Email not found. Skipping mail sending.
+2025-04-09 05:11:18 - Session user_id: Not set
+2025-04-09 05:11:18 - No user_id found in session
+2025-04-09 05:11:18 - Email not found. Skipping mail sending.
+2025-04-09 05:17:06 - Session userID: 12
+2025-04-09 05:17:06 - Fetching email for userID: 12
+2025-04-09 05:23:56 - Session userID: 12
+2025-04-09 05:23:56 - Fetching email for userID: 12
+2025-04-09 05:23:56 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:24:09 - Session userID: 12
+2025-04-09 05:24:09 - Fetching email for userID: 12
+2025-04-09 05:24:09 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:24:09 - PDO Insert Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'userID' in 'field list'
+2025-04-09 05:24:09 - Session userID: 12
+2025-04-09 05:24:09 - Fetching email for userID: 12
+2025-04-09 05:24:09 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:30:11 - Session userID: 13
+2025-04-09 05:30:11 - Fetching email for userID: 13
+2025-04-09 05:30:11 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:30:30 - Session userID: 13
+2025-04-09 05:30:30 - Fetching email for userID: 13
+2025-04-09 05:30:30 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:30:30 - Configuring SMTP...
+2025-04-09 05:30:30 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:30:52 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-09 05:30:52 - Session userID: 13
+2025-04-09 05:30:52 - Fetching email for userID: 13
+2025-04-09 05:30:52 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:32:23 - Session userID: 13
+2025-04-09 05:32:23 - Fetching email for userID: 13
+2025-04-09 05:32:23 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:32:30 - Session userID: 13
+2025-04-09 05:32:30 - Fetching email for userID: 13
+2025-04-09 05:32:30 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:32:30 - Configuring SMTP...
+2025-04-09 05:32:30 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:32:35 - Email sent successfully.
+2025-04-09 05:32:35 - Session userID: 13
+2025-04-09 05:32:35 - Fetching email for userID: 13
+2025-04-09 05:32:35 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:36:36 - Session userID: 13
+2025-04-09 05:36:36 - Fetching email for userID: 13
+2025-04-09 05:36:37 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:36:45 - Session userID: 13
+2025-04-09 05:36:45 - Fetching email for userID: 13
+2025-04-09 05:36:45 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:36:45 - Configuring SMTP...
+2025-04-09 05:36:45 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:36:51 - Email sent successfully.
+2025-04-09 05:36:51 - Session userID: 13
+2025-04-09 05:36:51 - Fetching email for userID: 13
+2025-04-09 05:36:51 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:43:30 - Session userID: 13
+2025-04-09 05:43:30 - Fetching email and budgetID for userID: 13
+2025-04-09 05:43:30 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:43:30 - Fetched budgetID: 9
+2025-04-09 05:43:36 - Session userID: 13
+2025-04-09 05:43:36 - Fetching email and budgetID for userID: 13
+2025-04-09 05:43:36 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:43:36 - Fetched budgetID: 9
+2025-04-09 05:43:36 - Configuring SMTP...
+2025-04-09 05:43:36 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:43:42 - Email sent successfully.
+2025-04-09 05:43:42 - Session userID: 13
+2025-04-09 05:43:42 - Fetching email and budgetID for userID: 13
+2025-04-09 05:43:42 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:43:42 - Fetched budgetID: 9
+2025-04-09 05:56:29 - Session userID: 13
+2025-04-09 05:56:29 - Fetching email and budgetID for userID: 13
+2025-04-09 05:56:29 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:56:29 - Fetched budgetID: 9
+2025-04-09 05:56:45 - Session userID: 13
+2025-04-09 05:56:45 - Fetching email and budgetID for userID: 13
+2025-04-09 05:56:45 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:56:45 - Fetched budgetID: 9
+2025-04-09 05:56:45 - Configuring SMTP...
+2025-04-09 05:56:45 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:56:51 - Email sent successfully.
+2025-04-09 05:56:51 - Session userID: 13
+2025-04-09 05:56:51 - Fetching email and budgetID for userID: 13
+2025-04-09 05:56:51 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:56:51 - Fetched budgetID: 9
+2025-04-09 05:57:08 - Session userID: 13
+2025-04-09 05:57:08 - Fetching email and budgetID for userID: 13
+2025-04-09 05:57:08 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:57:08 - Fetched budgetID: 9
+2025-04-09 05:57:08 - Configuring SMTP...
+2025-04-09 05:57:08 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:57:13 - Email sent successfully.
+2025-04-09 05:57:13 - Session userID: 13
+2025-04-09 05:57:13 - Fetching email and budgetID for userID: 13
+2025-04-09 05:57:13 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:57:13 - Fetched budgetID: 9
+2025-04-09 05:57:27 - Session userID: 13
+2025-04-09 05:57:27 - Fetching email and budgetID for userID: 13
+2025-04-09 05:57:27 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:57:27 - Fetched budgetID: 9
+2025-04-09 05:57:27 - Configuring SMTP...
+2025-04-09 05:57:27 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:57:33 - Email sent successfully.
+2025-04-09 05:57:33 - Session userID: 13
+2025-04-09 05:57:33 - Fetching email and budgetID for userID: 13
+2025-04-09 05:57:33 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:57:33 - Fetched budgetID: 9
+2025-04-09 05:57:55 - Session userID: 13
+2025-04-09 05:57:55 - Fetching email and budgetID for userID: 13
+2025-04-09 05:57:55 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:57:55 - Fetched budgetID: 9
+2025-04-09 05:57:55 - Configuring SMTP...
+2025-04-09 05:57:55 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 05:58:01 - Email sent successfully.
+2025-04-09 05:58:01 - Session userID: 13
+2025-04-09 05:58:01 - Fetching email and budgetID for userID: 13
+2025-04-09 05:58:01 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 05:58:01 - Fetched budgetID: 9
+2025-04-09 06:14:04 - Session userID: 13
+2025-04-09 06:14:04 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 06:14:04 - Fetched budgetID: 9
+2025-04-09 19:08:16 - Session userID: 13
+2025-04-09 19:08:16 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:08:16 - Fetched budgetID: 9
+2025-04-09 19:08:24 - Session userID: 13
+2025-04-09 19:08:24 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:08:24 - Fetched budgetID: 9
+2025-04-09 19:08:24 - Configuring SMTP...
+2025-04-09 19:08:24 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 19:08:45 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-09 19:08:45 - Session userID: 13
+2025-04-09 19:08:45 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:08:45 - Fetched budgetID: 9
+2025-04-09 19:09:33 - Session userID: 13
+2025-04-09 19:09:33 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:09:33 - Fetched budgetID: 9
+2025-04-09 19:09:42 - Session userID: 13
+2025-04-09 19:09:42 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:09:42 - Fetched budgetID: 9
+2025-04-09 19:09:42 - Configuring SMTP...
+2025-04-09 19:09:42 - Sending email to shraddhautpat6@gmail.com...
+2025-04-09 19:09:50 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server Additional SMTP info: php_network_getaddresses: getaddrinfo for smtp.gmail.com failed: No such host is known. 
+2025-04-09 19:09:51 - Session userID: 13
+2025-04-09 19:09:51 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:09:51 - Fetched budgetID: 9
+2025-04-09 19:11:36 - Session userID: 13
+2025-04-09 19:11:36 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 19:11:36 - Fetched budgetID: 9
+2025-04-09 19:31:17 - Session userID: 14
+2025-04-09 19:31:17 - Fetched email: pradnyakulkarni1245@gmail.com
+2025-04-09 19:31:17 - Fetched budgetID: 10
+2025-04-09 19:36:56 - Session userID: 14
+2025-04-09 19:36:56 - Fetched email: pradnyakulkarni1245@gmail.com
+2025-04-09 19:36:56 - Fetched budgetID: 10
+2025-04-09 19:37:05 - Session userID: 14
+2025-04-09 19:37:05 - Fetched email: pradnyakulkarni1245@gmail.com
+2025-04-09 19:37:05 - Fetched budgetID: 10
+2025-04-09 19:37:05 - Configuring SMTP for pradnyakulkarni1245@gmail.com...
+2025-04-09 19:37:12 - Email successfully sent to pradnyakulkarni1245@gmail.com.
+2025-04-09 19:37:12 - Session userID: 14
+2025-04-09 19:37:12 - Fetched email: pradnyakulkarni1245@gmail.com
+2025-04-09 19:37:12 - Fetched budgetID: 10
+2025-04-09 19:43:51 - Session userID: 15
+2025-04-09 19:43:51 - Fetched email: kulkarnipradnyai1245@gmail.com
+2025-04-09 19:43:51 - Fetched budgetID: 11
+2025-04-09 19:43:57 - Session userID: 15
+2025-04-09 19:43:57 - Fetched email: kulkarnipradnyai1245@gmail.com
+2025-04-09 19:43:57 - Fetched budgetID: 11
+2025-04-09 19:43:58 - Configuring SMTP for kulkarnipradnyai1245@gmail.com...
+2025-04-09 19:44:03 - Email successfully sent to kulkarnipradnyai1245@gmail.com.
+2025-04-09 19:44:03 - Session userID: 15
+2025-04-09 19:44:03 - Fetched email: kulkarnipradnyai1245@gmail.com
+2025-04-09 19:44:03 - Fetched budgetID: 11
+2025-04-09 20:00:01 - Session userID: 16
+2025-04-09 20:00:01 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 20:00:01 - Fetched budgetID: 12
+2025-04-09 20:00:20 - Session userID: 16
+2025-04-09 20:00:20 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 20:00:20 - Fetched budgetID: 12
+2025-04-09 20:00:20 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-09 20:00:27 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-09 20:00:27 - Session userID: 16
+2025-04-09 20:00:27 - Fetched email: shraddhautpat6@gmail.com
+2025-04-09 20:00:27 - Fetched budgetID: 12
+2025-04-10 05:14:07 - Session userID: 17
+2025-04-10 05:14:07 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:14:07 - Fetched budgetID: 13
+2025-04-10 05:15:08 - Session userID: 17
+2025-04-10 05:15:08 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:15:08 - Fetched budgetID: 13
+2025-04-10 05:15:08 - Configuring SMTP for ingalesneha1559@gmail.com...
+2025-04-10 05:15:21 - Email successfully sent to ingalesneha1559@gmail.com.
+2025-04-10 05:15:21 - Session userID: 17
+2025-04-10 05:15:21 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:15:21 - Fetched budgetID: 13
+2025-04-10 05:16:11 - Session userID: 17
+2025-04-10 05:16:11 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:16:11 - Fetched budgetID: 13
+2025-04-10 05:16:43 - Session userID: 17
+2025-04-10 05:16:43 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:16:43 - Fetched budgetID: 13
+2025-04-10 05:17:09 - Session userID: 17
+2025-04-10 05:17:09 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:17:09 - Fetched budgetID: 13
+2025-04-10 05:17:09 - Configuring SMTP for ingalesneha1559@gmail.com...
+2025-04-10 05:17:15 - Email successfully sent to ingalesneha1559@gmail.com.
+2025-04-10 05:17:15 - Session userID: 17
+2025-04-10 05:17:15 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:17:15 - Fetched budgetID: 13
+2025-04-10 05:17:46 - Session userID: 17
+2025-04-10 05:17:46 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:17:46 - Fetched budgetID: 13
+2025-04-10 05:17:46 - Configuring SMTP for ingalesneha1559@gmail.com...
+2025-04-10 05:17:52 - Email successfully sent to ingalesneha1559@gmail.com.
+2025-04-10 05:17:52 - Session userID: 17
+2025-04-10 05:17:52 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:17:52 - Fetched budgetID: 13
+2025-04-10 05:18:42 - Session userID: 17
+2025-04-10 05:18:42 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:18:42 - Fetched budgetID: 13
+2025-04-10 05:19:01 - Session userID: 17
+2025-04-10 05:19:01 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:19:01 - Fetched budgetID: 13
+2025-04-10 05:19:01 - Configuring SMTP for ingalesneha1559@gmail.com...
+2025-04-10 05:19:07 - Email successfully sent to ingalesneha1559@gmail.com.
+2025-04-10 05:19:07 - Session userID: 17
+2025-04-10 05:19:07 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:19:07 - Fetched budgetID: 13
+2025-04-10 05:38:14 - Session userID: 17
+2025-04-10 05:38:14 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:38:14 - Fetched budgetID: 13
+2025-04-10 05:38:30 - Session userID: 17
+2025-04-10 05:38:30 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:38:30 - Fetched budgetID: 13
+2025-04-10 05:38:30 - Configuring SMTP for ingalesneha1559@gmail.com...
+2025-04-10 05:38:51 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-10 05:38:52 - Session userID: 17
+2025-04-10 05:38:52 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:38:52 - Fetched budgetID: 13
+2025-04-10 05:44:44 - Session userID: 17
+2025-04-10 05:44:44 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:44:44 - Fetched budgetID: 13
+2025-04-10 05:44:45 - Session userID: 17
+2025-04-10 05:44:45 - Fetched email: ingalesneha1559@gmail.com
+2025-04-10 05:44:45 - Fetched budgetID: 13
+2025-04-10 05:50:19 - Session userID: 18
+2025-04-10 05:50:19 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:50:19 - Fetched budgetID: 14
+2025-04-10 05:50:30 - Session userID: 18
+2025-04-10 05:50:30 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:50:30 - Fetched budgetID: 14
+2025-04-10 05:50:31 - Configuring SMTP for kulkarnipradnya1245@gmail.com...
+2025-04-10 05:50:52 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-10 05:50:52 - Session userID: 18
+2025-04-10 05:50:52 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:50:52 - Fetched budgetID: 14
+2025-04-10 05:51:22 - Session userID: 18
+2025-04-10 05:51:22 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:51:22 - Fetched budgetID: 14
+2025-04-10 05:51:31 - Session userID: 18
+2025-04-10 05:51:31 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:51:31 - Fetched budgetID: 14
+2025-04-10 05:51:31 - Configuring SMTP for kulkarnipradnya1245@gmail.com...
+2025-04-10 05:51:37 - Email successfully sent to kulkarnipradnya1245@gmail.com.
+2025-04-10 05:51:37 - Session userID: 18
+2025-04-10 05:51:37 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:51:37 - Fetched budgetID: 14
+2025-04-10 05:52:24 - Session userID: 18
+2025-04-10 05:52:24 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:52:24 - Fetched budgetID: 14
+2025-04-10 05:52:24 - Configuring SMTP for kulkarnipradnya1245@gmail.com...
+2025-04-10 05:52:30 - Email successfully sent to kulkarnipradnya1245@gmail.com.
+2025-04-10 05:52:30 - Session userID: 18
+2025-04-10 05:52:30 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:52:30 - Fetched budgetID: 14
+2025-04-10 05:53:02 - Session userID: 18
+2025-04-10 05:53:02 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:53:02 - Fetched budgetID: 14
+2025-04-10 05:53:02 - Configuring SMTP for kulkarnipradnya1245@gmail.com...
+2025-04-10 05:53:08 - Email successfully sent to kulkarnipradnya1245@gmail.com.
+2025-04-10 05:53:08 - Session userID: 18
+2025-04-10 05:53:08 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:53:08 - Fetched budgetID: 14
+2025-04-10 05:53:36 - Session userID: 18
+2025-04-10 05:53:36 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:53:36 - Fetched budgetID: 14
+2025-04-10 05:53:36 - Configuring SMTP for kulkarnipradnya1245@gmail.com...
+2025-04-10 05:53:43 - Email successfully sent to kulkarnipradnya1245@gmail.com.
+2025-04-10 05:53:43 - Session userID: 18
+2025-04-10 05:53:43 - Fetched email: kulkarnipradnya1245@gmail.com
+2025-04-10 05:53:43 - Fetched budgetID: 14
+2025-04-13 10:33:52 - Session userID: 19
+2025-04-13 10:33:52 - Fetched email: pratikpatil160804@gmail.com
+2025-04-13 10:33:52 - Fetched budgetID: 15
+2025-04-13 10:34:13 - Session userID: 19
+2025-04-13 10:34:13 - Fetched email: pratikpatil160804@gmail.com
+2025-04-13 10:34:13 - Fetched budgetID: 15
+2025-04-13 10:34:13 - Configuring SMTP for pratikpatil160804@gmail.com...
+2025-04-13 10:34:21 - Email successfully sent to pratikpatil160804@gmail.com.
+2025-04-13 10:34:21 - Session userID: 19
+2025-04-13 10:34:21 - Fetched email: pratikpatil160804@gmail.com
+2025-04-13 10:34:21 - Fetched budgetID: 15
+2025-04-13 10:35:25 - Session userID: 19
+2025-04-13 10:35:25 - Fetched email: pratikpatil160804@gmail.com
+2025-04-13 10:35:25 - Fetched budgetID: 15
+2025-04-13 10:35:35 - Session userID: 19
+2025-04-13 10:35:35 - Fetched email: pratikpatil160804@gmail.com
+2025-04-13 10:35:35 - Fetched budgetID: 15
+2025-04-13 10:35:35 - Configuring SMTP for pratikpatil160804@gmail.com...
+2025-04-13 10:35:42 - Email successfully sent to pratikpatil160804@gmail.com.
+2025-04-13 10:35:42 - Session userID: 19
+2025-04-13 10:35:42 - Fetched email: pratikpatil160804@gmail.com
+2025-04-13 10:35:42 - Fetched budgetID: 15
+2025-04-13 10:37:42 - Session userID: 20
+2025-04-13 10:37:42 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:37:42 - Fetched budgetID: 16
+2025-04-13 10:37:52 - Session userID: 20
+2025-04-13 10:37:52 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:37:52 - Fetched budgetID: 16
+2025-04-13 10:37:52 - Configuring SMTP for pratik160804@gmail.com...
+2025-04-13 10:38:00 - Email successfully sent to pratik160804@gmail.com.
+2025-04-13 10:38:00 - Session userID: 20
+2025-04-13 10:38:00 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:38:00 - Fetched budgetID: 16
+2025-04-13 10:39:11 - Session userID: 20
+2025-04-13 10:39:11 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:39:11 - Fetched budgetID: 16
+2025-04-13 10:39:11 - Configuring SMTP for pratik160804@gmail.com...
+2025-04-13 10:39:23 - Email successfully sent to pratik160804@gmail.com.
+2025-04-13 10:39:23 - Session userID: 20
+2025-04-13 10:39:23 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:39:23 - Fetched budgetID: 16
+2025-04-13 10:40:36 - Session userID: 20
+2025-04-13 10:40:36 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:40:36 - Fetched budgetID: 16
+2025-04-13 10:40:57 - Session userID: 20
+2025-04-13 10:40:57 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:40:57 - Fetched budgetID: 16
+2025-04-13 10:40:57 - Configuring SMTP for pratik160804@gmail.com...
+2025-04-13 10:41:06 - Email successfully sent to pratik160804@gmail.com.
+2025-04-13 10:41:06 - Session userID: 20
+2025-04-13 10:41:06 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:41:06 - Fetched budgetID: 16
+2025-04-13 10:41:21 - Session userID: 20
+2025-04-13 10:41:21 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:41:21 - Fetched budgetID: 16
+2025-04-13 10:41:21 - Configuring SMTP for pratik160804@gmail.com...
+2025-04-13 10:41:28 - Email successfully sent to pratik160804@gmail.com.
+2025-04-13 10:41:28 - Session userID: 20
+2025-04-13 10:41:28 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:41:28 - Fetched budgetID: 16
+2025-04-13 10:42:09 - Session userID: 20
+2025-04-13 10:42:09 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:42:09 - Fetched budgetID: 16
+2025-04-13 10:42:33 - Session userID: 20
+2025-04-13 10:42:33 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:42:33 - Fetched budgetID: 16
+2025-04-13 10:43:01 - Session userID: 20
+2025-04-13 10:43:01 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:43:01 - Fetched budgetID: 16
+2025-04-13 10:43:01 - Configuring SMTP for pratik160804@gmail.com...
+2025-04-13 10:43:10 - Email successfully sent to pratik160804@gmail.com.
+2025-04-13 10:43:10 - Session userID: 20
+2025-04-13 10:43:10 - Fetched email: pratik160804@gmail.com
+2025-04-13 10:43:10 - Fetched budgetID: 16
+2025-04-13 15:29:37 - Session userID: 20
+2025-04-13 15:29:37 - Fetched email: pratik160804@gmail.com
+2025-04-13 15:29:37 - Fetched budgetID: 16
+2025-04-13 15:29:57 - Session userID: 20
+2025-04-13 15:29:57 - Fetched email: pratik160804@gmail.com
+2025-04-13 15:29:57 - Fetched budgetID: 16
+2025-04-13 15:29:57 - Configuring SMTP for pratik160804@gmail.com...
+2025-04-13 15:30:04 - Email successfully sent to pratik160804@gmail.com.
+2025-04-13 15:30:04 - Budget Check - Total: ₹1000, Spent: ₹950, Remaining: ₹50, Threshold: ₹200
+2025-04-13 15:30:10 - Low balance warning email sent to pratik160804@gmail.com.
+2025-04-13 15:30:10 - Session userID: 20
+2025-04-13 15:30:10 - Fetched email: pratik160804@gmail.com
+2025-04-13 15:30:10 - Fetched budgetID: 16
+2025-04-13 15:35:42 - Session userID: 20
+2025-04-13 15:35:42 - Fetched email: pratik160804@gmail.com
+2025-04-13 15:35:42 - Fetched budgetID: 16
+2025-04-13 15:35:44 - Session userID: 20
+2025-04-13 15:35:44 - Fetched email: pratik160804@gmail.com
+2025-04-13 15:35:44 - Fetched budgetID: 16

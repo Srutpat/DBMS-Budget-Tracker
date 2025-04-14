@@ -1,0 +1,19 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="authMessage"></p>
+        <a href="signup.php">Create Account</a>
+    </div>
+</body>
+</html>
