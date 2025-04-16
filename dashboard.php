@@ -1,27 +1,71 @@
-
 <?php
 session_start();
 require 'config.php';
 
+// Check if user is logged in
 if (!isset($_SESSION['userID'])) {
     header("Location: login.php");
     exit();
 }
 
-$userID = $_SESSION['userID'];
+$userID = $_SESSION['userID']; // Get userID from session
 
-// Budget and expense logic
+// Fetch total budget for the user
 $incomeQuery = $conn->prepare("SELECT totalBudget FROM budget WHERE userID = ?");
 $incomeQuery->execute([$userID]);
-$income = $incomeQuery->fetchColumn() ?? 0;
+$income = $incomeQuery->fetchColumn() ?? 0; // Default to 0 if no budget exists
 
-$expenseQuery = $conn->prepare("SELECT expenseID, description, amount, dateAdded FROM expenses WHERE budgetID IN (SELECT budgetID FROM budget WHERE userID = ?)");
+// Fetch all expenses for the user
+$expenseQuery = $conn->prepare("SELECT expenseID, description, amount, dateAdded, categoryID FROM expenses WHERE budgetID IN (SELECT budgetID FROM budget WHERE userID = ?)");
 $expenseQuery->execute([$userID]);
 $expenses = $expenseQuery->fetchAll(PDO::FETCH_ASSOC);
 
+// Fetch categories and create a mapping
+$categoryQuery = $conn->prepare("SELECT categoryID, categoryName FROM categories WHERE userID = ?");
+$categoryQuery->execute([$userID]);
+$categories = $categoryQuery->fetchAll(PDO::FETCH_ASSOC);
+
+// Create a category mapping (categoryID => categoryName)
+$categoryMapping = [];
+foreach ($categories as $category) {
+    $categoryMapping[$category['categoryID']] = $category['categoryName'];
+}
+
+// Initialize an empty array to hold the categorized expenses
+$categoryExpenses = [];
+
+// Loop through all expenses and categorize them
+foreach ($expenses as $expense) {
+    // Check if 'categoryID' exists in the current expense
+    if (isset($expense['categoryID'])) {
+        // Map categoryID to categoryName
+        $catName = $categoryMapping[$expense['categoryID']] ?? 'Uncategorized'; // Default to 'Uncategorized' if not found
+
+        // If this category hasn't been seen before, initialize it with 0
+        if (!isset($categoryExpenses[$catName])) {
+            $categoryExpenses[$catName] = 0;
+        }
+
+        // Add the expense amount to the appropriate category
+        $categoryExpenses[$catName] += $expense['amount'];
+    } else {
+        // Handle cases where categoryID is missing
+        echo "Warning: categoryID missing in expense data<br>";
+    }
+}
+
+// Remove debug output for category-wise expenses
+// echo '<pre>';
+// print_r($categoryExpenses);
+// echo '</pre>';
+
+// Calculate the total expenses
 $totalExpenses = array_sum(array_column($expenses, 'amount'));
+
+// Calculate the remaining balance
 $remainingBalance = $income - $totalExpenses;
 
+// Fetch the last expense update time
 $timeQuery = $conn->prepare("SELECT MAX(dateAdded) FROM expenses WHERE budgetID IN (SELECT budgetID FROM budget WHERE userID = ?)");
 $timeQuery->execute([$userID]);
 $lastUpdated = $timeQuery->fetchColumn();
@@ -29,13 +73,30 @@ $lastUpdated = $timeQuery->fetchColumn();
 // Group expenses by month
 $monthWiseData = [];
 foreach ($expenses as $expense) {
+    // Get the month and year from the expense date
     $month = date("M Y", strtotime($expense['dateAdded']));
+    
+    // Initialize the month category if it doesn't exist
     if (!isset($monthWiseData[$month])) {
         $monthWiseData[$month] = 0;
     }
+
+    // Add the expense amount to the corresponding month
     $monthWiseData[$month] += $expense['amount'];
 }
+
+// Remove debug output for month-wise data
+// echo '<pre>';
+// print_r($monthWiseData);
+// echo '</pre>';
+
+// Example output for remaining balance
+// echo "Total Budget: ₹$income<br>";
+// echo "Total Expenses: ₹$totalExpenses<br>";
+// echo "Remaining Balance: ₹$remainingBalance<br>";
+// echo "Last Expense Update: $lastUpdated<br>";
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,6 +131,21 @@ foreach ($expenses as $expense) {
             border: none;
             border-radius: 8px;
             font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .profile-btn {
+            position: fixed;
+            top: 20px;
+            right: 140px;
+            background:rgb(175, 221, 210);
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 35%;
+            font-size: 16px;
             cursor: pointer;
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             z-index: 1000;
@@ -199,6 +275,7 @@ foreach ($expenses as $expense) {
     </style>
 </head>
 <body>
+
 <?php if (isset($_SESSION['success'])): ?>
     <p style="text-align:center; background-color: #28a745; color: white; padding: 10px; margin: 10px auto; border-radius: 10px;">
         <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
@@ -212,6 +289,7 @@ foreach ($expenses as $expense) {
 <?php endif; ?>
 
     <button class="logout-btn" onclick="window.location.href='logout.php'">Logout</button>
+    <!-- <button class="profile-btn" onclick="window.location.href='profile.php'">👤</button> -->
 
     <div class="main-container">
         <div class="left-panel">
@@ -262,81 +340,88 @@ foreach ($expenses as $expense) {
         </div>
 
         <div class="right-panel">
-            <?php if (!empty($expenses)): ?>
-                <div style="width:100%;">
-                    <canvas id="expensePieChart" height="250"></canvas>
-                    <h4 style="text-align:center; margin: 20px 0 10px;">Monthly Expenses Overview</h4>
-                    <canvas id="expenseLineChart" height="250"></canvas>
-                </div>
-            <?php else: ?>
-                <p style="text-align:center; font-style:italic;">No data available to display chart.</p>
-            <?php endif; ?>
-        </div>
+    <div style="width: 100%;">
+        <h3>Spending Overview</h3>
+        <canvas id="categoryChart"></canvas>
+        <br><br>
+        <h3>Monthly Spending</h3>
+        <canvas id="monthlyChart"></canvas>
     </div>
+</div>
 
-    <script>
-        function toggleIncomeForm() {
-            const form = document.getElementById('incomeForm');
-            form.style.display = (form.style.display === "none") ? "block" : "none";
-        }
 
-        <?php if (!empty($expenses)): ?>
-        // Pie Chart (category-wise or just show total vs remaining)
-        const pieCtx = document.getElementById('expensePieChart').getContext('2d');
-        new Chart(pieCtx, {
+   
+</div>
+
+<script>
+    window.onload = function() {
+        const categoryLabels = <?php echo json_encode(array_keys($categoryExpenses)); ?>;
+        const categoryData = <?php echo json_encode(array_values($categoryExpenses)); ?>;
+
+        const ctx1 = document.getElementById('categoryChart').getContext('2d');
+        new Chart(ctx1, {
             type: 'pie',
             data: {
-                labels: ['Spent', 'Remaining'],
+                labels: categoryLabels,
                 datasets: [{
-                    data: [<?php echo $totalExpenses; ?>, <?php echo $remainingBalance; ?>],
-                    backgroundColor: ['#ff6384', '#36a2eb']
+                    label: 'Expenses by Category',
+                    data: categoryData,
+                    backgroundColor: [
+                        '#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'
+                    ],
+                    borderColor: '#1a1a2e',
+                    borderWidth: 1
                 }]
             },
             options: {
-                responsive: true,
                 plugins: {
                     legend: {
-                        position: 'bottom'
+                        labels: {
+                            color: 'white'
+                        }
                     }
                 }
             }
         });
 
-        // Line Chart (monthly trend)
-        const lineCtx = document.getElementById('expenseLineChart').getContext('2d');
-        const monthLabels = <?php echo json_encode(array_keys($monthWiseData)); ?>;
-        const monthValues = <?php echo json_encode(array_values($monthWiseData)); ?>;
+        const monthlyLabels = <?php echo json_encode(array_keys($monthWiseData)); ?>;
+        const monthlyData = <?php echo json_encode(array_values($monthWiseData)); ?>;
 
-        new Chart(lineCtx, {
-            type: 'line',
+        const ctx2 = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
             data: {
-                labels: monthLabels,
+                labels: monthlyLabels,
                 datasets: [{
                     label: 'Monthly Expenses',
-                    data: monthValues,
-                    fill: true,
-                    borderColor: '#4bc0c0',
-                    backgroundColor: 'rgba(75,192,192,0.2)',
-                    tension: 0.4
+                    data: monthlyData,
+                    backgroundColor: '#00c9ff',
+                    borderRadius: 10
                 }]
             },
             options: {
-                responsive: true,
                 scales: {
+                    x: {
+                        ticks: { color: 'white' }
+                    },
                     y: {
-                        beginAtZero: true
+                        ticks: { color: 'white' }
                     }
                 },
                 plugins: {
                     legend: {
-                        display: true
+                        labels: {
+                            color: 'white'
+                        }
                     }
                 }
             }
         });
-        <?php endif; ?>
-    </script>
+    }
+</script>
+
+
+
 
 </body>
 </html>
-

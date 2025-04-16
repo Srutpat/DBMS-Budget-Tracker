@@ -170,6 +170,22 @@
       font-size: 14px;
       background-color: #001f3f;
     }
+
+    /* 🔥 Glow Cursor Styling */
+    .glow-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: #00ffcc;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 60px #00ffcc;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: top 0.05s ease, left 0.05s ease;
+    }
   </style>
 </head>
 
@@ -177,11 +193,12 @@
   <header>
     <h1>Spend Wise</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <button onclick="window.location.href='#signup'">Signup</button>
-      <button>Login</button>
-    </nav>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <button onclick="window.location.href='/signup.php'">Signup</button>
+  <button onclick="window.location.href='/login.php'">Login</button>
+</nav>
+
   </header>
 
   <section class="hero">
@@ -245,6 +262,17 @@
   <footer>
     &copy; 2025 Spend Wise. All Rights Reserved.
   </footer>
+
+  <!-- ✨ Glow Cursor HTML + Script -->
+  <div class="glow-cursor" id="glowCursor"></div>
+  <script>
+    const cursor = document.getElementById("glowCursor");
+
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.top = e.clientY + "px";
+      cursor.style.left = e.clientX + "px";
+    });
+  </script>
 </body>
 
 </html>

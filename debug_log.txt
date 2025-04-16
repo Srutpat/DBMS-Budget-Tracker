@@ -384,3 +384,268 @@
 2025-04-13 15:35:44 - Session userID: 20
 2025-04-13 15:35:44 - Fetched email: pratik160804@gmail.com
 2025-04-13 15:35:44 - Fetched budgetID: 16
+2025-04-15 04:45:02 - Session userID: 29
+2025-04-15 04:45:02 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:45:02 - Fetched budgetID: 19
+2025-04-15 04:49:26 - Session userID: 29
+2025-04-15 04:49:26 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:49:26 - Fetched budgetID: 19
+2025-04-15 04:52:24 - Session userID: 29
+2025-04-15 04:52:24 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:52:24 - Fetched budgetID: 19
+2025-04-15 04:54:25 - Session userID: 29
+2025-04-15 04:54:25 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:54:25 - Fetched budgetID: 19
+2025-04-15 04:56:41 - Session userID: 29
+2025-04-15 04:56:41 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:56:41 - Fetched budgetID: 19
+2025-04-15 04:58:04 - Session userID: 29
+2025-04-15 04:58:04 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:58:04 - Fetched budgetID: 19
+2025-04-15 04:59:45 - Session userID: 29
+2025-04-15 04:59:45 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 04:59:45 - Fetched budgetID: 19
+2025-04-15 05:10:54 - Session userID: 29
+2025-04-15 05:10:54 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 05:10:54 - Fetched budgetID: 19
+2025-04-15 05:11:47 - Session userID: 29
+2025-04-15 05:11:47 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 05:11:47 - Fetched budgetID: 19
+2025-04-15 05:12:08 - Session userID: 29
+2025-04-15 05:12:08 - Fetched email: shraddhautpat6@gmail.com
+2025-04-15 05:12:08 - Fetched budgetID: 19
+2025-04-16 05:10:16 - Session userID: 29
+2025-04-16 05:10:16 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:10:16 - Fetched budgetID: 19
+2025-04-16 05:10:34 - Session userID: 29
+2025-04-16 05:10:34 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:10:34 - Fetched budgetID: 19
+2025-04-16 05:12:44 - Session userID: 29
+2025-04-16 05:12:44 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:12:44 - Fetched budgetID: 19
+2025-04-16 05:15:51 - Session userID: 29
+2025-04-16 05:15:51 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:15:51 - Fetched budgetID: 19
+2025-04-16 05:15:57 - Session userID: 29
+2025-04-16 05:15:57 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:15:57 - Fetched budgetID: 19
+2025-04-16 05:24:10 - Session userID: 29
+2025-04-16 05:24:10 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:24:10 - Fetched budgetID: 19
+2025-04-16 05:24:20 - Session userID: 29
+2025-04-16 05:24:20 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:24:20 - Fetched budgetID: 19
+2025-04-16 05:24:34 - Session userID: 29
+2025-04-16 05:24:34 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:24:34 - Fetched budgetID: 19
+2025-04-16 05:24:34 - PDO Insert Error: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+2025-04-16 05:24:34 - Session userID: 29
+2025-04-16 05:24:34 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:24:34 - Fetched budgetID: 19
+2025-04-16 05:27:44 - Session userID: 29
+2025-04-16 05:27:44 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:27:44 - Fetched budgetID: 19
+2025-04-16 05:27:46 - Session userID: 29
+2025-04-16 05:27:46 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:27:46 - Fetched budgetID: 19
+2025-04-16 05:27:52 - Session userID: 29
+2025-04-16 05:27:52 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:27:52 - Fetched budgetID: 19
+2025-04-16 05:27:52 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 05:28:14 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-16 05:28:14 - Session userID: 29
+2025-04-16 05:28:14 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:28:14 - Fetched budgetID: 19
+2025-04-16 05:28:14 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 05:28:35 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-16 05:28:35 - Session userID: 29
+2025-04-16 05:28:35 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:28:35 - Fetched budgetID: 19
+2025-04-16 05:28:59 - Session userID: 29
+2025-04-16 05:28:59 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:28:59 - Fetched budgetID: 19
+2025-04-16 05:29:26 - Session userID: 29
+2025-04-16 05:29:26 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:29:26 - Fetched budgetID: 19
+2025-04-16 05:30:06 - Session userID: 29
+2025-04-16 05:30:06 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:30:06 - Fetched budgetID: 19
+2025-04-16 05:30:06 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 05:30:10 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 05:30:10 - Budget Check - Total: ₹3000, Spent: ₹1950, Remaining: ₹1050, Threshold: ₹200
+2025-04-16 05:30:10 - Session userID: 29
+2025-04-16 05:30:10 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:30:10 - Fetched budgetID: 19
+2025-04-16 05:30:30 - Session userID: 29
+2025-04-16 05:30:30 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:30:30 - Fetched budgetID: 19
+2025-04-16 05:30:47 - Session userID: 29
+2025-04-16 05:30:47 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:30:47 - Fetched budgetID: 19
+2025-04-16 05:30:47 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 05:30:50 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 05:30:50 - Budget Check - Total: ₹3000, Spent: ₹2200, Remaining: ₹800, Threshold: ₹200
+2025-04-16 05:30:50 - Session userID: 29
+2025-04-16 05:30:50 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:30:50 - Fetched budgetID: 19
+2025-04-16 05:38:37 - Session userID: 29
+2025-04-16 05:38:37 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:38:37 - Fetched budgetID: 19
+2025-04-16 05:39:29 - Session userID: 29
+2025-04-16 05:39:29 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:39:29 - Fetched budgetID: 19
+2025-04-16 05:39:35 - Session userID: 29
+2025-04-16 05:39:35 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:39:35 - Fetched budgetID: 19
+2025-04-16 05:39:35 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 05:39:39 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 05:39:39 - Budget Check - Total: ₹3000, Spent: ₹250, Remaining: ₹2750, Threshold: ₹200
+2025-04-16 05:39:39 - Session userID: 29
+2025-04-16 05:39:39 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 05:39:39 - Fetched budgetID: 19
+2025-04-16 06:04:49 - Session userID: 29
+2025-04-16 06:04:49 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:04:49 - Fetched budgetID: 19
+2025-04-16 06:05:08 - Session userID: 29
+2025-04-16 06:05:08 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:05:08 - Fetched budgetID: 19
+2025-04-16 06:05:08 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 06:05:12 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 06:05:12 - Budget Check - Total: ₹3000, Spent: ₹1750, Remaining: ₹1250, Threshold: ₹200
+2025-04-16 06:05:12 - Session userID: 29
+2025-04-16 06:05:12 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:05:12 - Fetched budgetID: 19
+2025-04-16 06:06:09 - Session userID: 29
+2025-04-16 06:06:09 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:06:09 - Fetched budgetID: 19
+2025-04-16 06:06:45 - Session userID: 29
+2025-04-16 06:06:45 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:06:45 - Fetched budgetID: 19
+2025-04-16 06:07:01 - Session userID: 29
+2025-04-16 06:07:01 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:07:01 - Fetched budgetID: 19
+2025-04-16 06:07:01 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 06:07:05 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 06:07:05 - Budget Check - Total: ₹3000, Spent: ₹1770, Remaining: ₹1230, Threshold: ₹200
+2025-04-16 06:07:05 - Session userID: 29
+2025-04-16 06:07:05 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:07:05 - Fetched budgetID: 19
+2025-04-16 06:07:25 - Session userID: 29
+2025-04-16 06:07:25 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:07:25 - Fetched budgetID: 19
+2025-04-16 06:07:25 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 06:07:30 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 06:07:30 - Budget Check - Total: ₹3000, Spent: ₹2035, Remaining: ₹965, Threshold: ₹200
+2025-04-16 06:07:30 - Session userID: 29
+2025-04-16 06:07:30 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 06:07:30 - Fetched budgetID: 19
+2025-04-16 09:17:14 - Session userID: 29
+2025-04-16 09:17:14 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:17:14 - Fetched budgetID: 19
+2025-04-16 09:17:38 - Session userID: 29
+2025-04-16 09:17:38 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:17:38 - Fetched budgetID: 19
+2025-04-16 09:17:58 - Session userID: 29
+2025-04-16 09:17:58 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:17:58 - Fetched budgetID: 19
+2025-04-16 09:17:58 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 09:18:09 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server Additional SMTP info: php_network_getaddresses: getaddrinfo for smtp.gmail.com failed: No such host is known. 
+2025-04-16 09:18:09 - Session userID: 29
+2025-04-16 09:18:09 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:18:09 - Fetched budgetID: 19
+2025-04-16 09:19:33 - Session userID: 29
+2025-04-16 09:19:33 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:19:33 - Fetched budgetID: 19
+2025-04-16 09:19:46 - Session userID: 29
+2025-04-16 09:19:46 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:19:46 - Fetched budgetID: 19
+2025-04-16 09:19:46 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 09:19:59 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 09:20:00 - Budget Check - Total: ₹3000, Spent: ₹2165, Remaining: ₹835, Threshold: ₹200
+2025-04-16 09:20:00 - Session userID: 29
+2025-04-16 09:20:00 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:20:00 - Fetched budgetID: 19
+2025-04-16 09:20:00 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 09:20:10 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 09:20:10 - Budget Check - Total: ₹3000, Spent: ₹2195, Remaining: ₹805, Threshold: ₹200
+2025-04-16 09:20:10 - Session userID: 29
+2025-04-16 09:20:10 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:20:10 - Fetched budgetID: 19
+2025-04-16 09:20:31 - Session userID: 29
+2025-04-16 09:20:31 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:20:31 - Fetched budgetID: 19
+2025-04-16 09:20:51 - Session userID: 29
+2025-04-16 09:20:51 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:20:51 - Fetched budgetID: 19
+2025-04-16 09:20:51 - Configuring SMTP for shraddhautpat6@gmail.com...
+2025-04-16 09:21:22 - Email successfully sent to shraddhautpat6@gmail.com.
+2025-04-16 09:21:22 - Budget Check - Total: ₹3000, Spent: ₹4295, Remaining: ₹-1295, Threshold: ₹200
+2025-04-16 09:21:28 - Low balance warning email sent to shraddhautpat6@gmail.com.
+2025-04-16 09:21:28 - Session userID: 29
+2025-04-16 09:21:28 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:21:28 - Fetched budgetID: 19
+2025-04-16 09:25:58 - Session userID: 29
+2025-04-16 09:25:58 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:25:58 - Fetched budgetID: 19
+2025-04-16 09:26:00 - Session userID: 29
+2025-04-16 09:26:00 - Fetched email: shraddhautpat6@gmail.com
+2025-04-16 09:26:00 - Fetched budgetID: 19
+2025-04-16 20:34:20 - Session userID: 30
+2025-04-16 20:34:20 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:34:20 - Fetched budgetID: 20
+2025-04-16 20:34:47 - Session userID: 30
+2025-04-16 20:34:47 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:34:47 - Fetched budgetID: 20
+2025-04-16 20:35:03 - Session userID: 30
+2025-04-16 20:35:03 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:35:03 - Fetched budgetID: 20
+2025-04-16 20:35:03 - Configuring SMTP for rakhi.pagar@pccoepune.org...
+2025-04-16 20:35:24 - Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server SMTP code: 10060 Additional SMTP info: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2025-04-16 20:35:24 - Session userID: 30
+2025-04-16 20:35:24 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:35:24 - Fetched budgetID: 20
+2025-04-16 20:35:45 - Session userID: 30
+2025-04-16 20:35:45 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:35:45 - Fetched budgetID: 20
+2025-04-16 20:35:55 - Session userID: 30
+2025-04-16 20:35:55 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:35:55 - Fetched budgetID: 20
+2025-04-16 20:35:55 - Configuring SMTP for rakhi.pagar@pccoepune.org...
+2025-04-16 20:35:59 - Email successfully sent to rakhi.pagar@pccoepune.org.
+2025-04-16 20:35:59 - Budget Check - Total: ₹25000, Spent: ₹7000, Remaining: ₹18000, Threshold: ₹2000
+2025-04-16 20:35:59 - Session userID: 30
+2025-04-16 20:35:59 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:35:59 - Fetched budgetID: 20
+2025-04-16 20:35:59 - Configuring SMTP for rakhi.pagar@pccoepune.org...
+2025-04-16 20:36:02 - Email successfully sent to rakhi.pagar@pccoepune.org.
+2025-04-16 20:36:02 - Budget Check - Total: ₹25000, Spent: ₹14000, Remaining: ₹11000, Threshold: ₹2000
+2025-04-16 20:36:02 - Session userID: 30
+2025-04-16 20:36:02 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:36:02 - Fetched budgetID: 20
+2025-04-16 20:36:44 - Session userID: 30
+2025-04-16 20:36:44 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:36:44 - Fetched budgetID: 20
+2025-04-16 20:37:24 - Session userID: 30
+2025-04-16 20:37:24 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:37:24 - Fetched budgetID: 20
+2025-04-16 20:37:24 - Configuring SMTP for rakhi.pagar@pccoepune.org...
+2025-04-16 20:37:27 - Email successfully sent to rakhi.pagar@pccoepune.org.
+2025-04-16 20:37:27 - Budget Check - Total: ₹25000, Spent: ₹14550, Remaining: ₹10450, Threshold: ₹2000
+2025-04-16 20:37:27 - Session userID: 30
+2025-04-16 20:37:27 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:37:27 - Fetched budgetID: 20
+2025-04-16 20:37:52 - Session userID: 30
+2025-04-16 20:37:52 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:37:52 - Fetched budgetID: 20
+2025-04-16 20:38:03 - Session userID: 30
+2025-04-16 20:38:03 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:38:03 - Fetched budgetID: 20
+2025-04-16 20:38:33 - Session userID: 30
+2025-04-16 20:38:33 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:38:33 - Fetched budgetID: 20
+2025-04-16 20:38:33 - Configuring SMTP for rakhi.pagar@pccoepune.org...
+2025-04-16 20:38:37 - Email successfully sent to rakhi.pagar@pccoepune.org.
+2025-04-16 20:38:37 - Budget Check - Total: ₹25000, Spent: ₹10050, Remaining: ₹14950, Threshold: ₹2000
+2025-04-16 20:38:37 - Session userID: 30
+2025-04-16 20:38:37 - Fetched email: rakhi.pagar@pccoepune.org
+2025-04-16 20:38:37 - Fetched budgetID: 20

@@ -1,30 +1,47 @@
-<?php 
+<!-- Signup Form HTML -->
+<?php
+session_start();
 require 'config.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
+    $phone = trim($_POST['phoneNumber']);
     $password = trim($_POST['password']);
+    $confirm_password = trim($_POST['confirm_password']);
 
-    if (empty($name) || empty($email) || empty($password)) {
-        $message = "All fields are required.";
+    if (empty($name) || empty($email) || empty($phone) || empty($password) || empty($confirm_password)) {
+        $message = "⚠️ All fields are required.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $message = "⚠️ Invalid email format.";
+    } elseif (!preg_match("/^[0-9]{10}$/", $phone)) {
+        $message = "⚠️ Phone number must be 10 digits.";
+    } elseif ($password !== $confirm_password) {
+        $message = "⚠️ Passwords do not match.";
     } else {
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
 
-        try {
-            $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
-            $stmt->bindParam(':name', $name);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':password', $hashed_password);
+        if ($stmt->rowCount() > 0) {
+            $message = "⚠️ Email already registered.";
+        } else {
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $insertStmt = $conn->prepare("INSERT INTO users (name, email, phoneNumber, password) VALUES (:name, :email, :phone, :password)");
+            $insertStmt->bindParam(':name', $name);
+            $insertStmt->bindParam(':email', $email);
+            $insertStmt->bindParam(':phone', $phone);
+            $insertStmt->bindParam(':password', $hashedPassword);
 
-            if ($stmt->execute()) {
+            if ($insertStmt->execute()) {
+                $_SESSION['success'] = "🎉 Signup successful. Please login.";
                 header("Location: login.php");
                 exit();
             } else {
-                $message = "Error: Could not register user.";
+                $message = "❌ Error during registration. Try again.";
             }
-        } catch (PDOException $e) {
-            $message = "Error: " . $e->getMessage();
         }
     }
 }
@@ -35,16 +52,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Signup | Budget Tracker</title>
-
     <link rel="icon" href="logo.png" type="image/png">
     <style>
         * {
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             transition: all 0.3s ease;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #141E30, #243B55);
@@ -52,33 +68,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
         }
 
         .form-container {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 16px;
-            padding: 30px 40px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            animation: slideIn 0.7s ease-out forwards;
+            padding: 40px 30px;
             width: 100%;
-            max-width: 420px;
+            max-width: 400px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            text-align: center;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .form-container img {
+            width: 70px;
+            margin-bottom: 10px;
         }
 
-        h2 {
+        .form-container h2 {
             margin-bottom: 20px;
             color: #ffd700;
         }
@@ -87,11 +97,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
-            border: 1px solid #4ca1af;
             border-radius: 8px;
+            border: 1px solid #ddd;
             background-color: rgba(255, 255, 255, 0.1);
             color: #fff;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         input:focus {
@@ -100,63 +110,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: rgba(255, 255, 255, 0.15);
         }
 
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
         .action-btn {
-            background: linear-gradient(45deg, #00b09b, #96c93d);
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
             color: white;
             font-weight: bold;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
             margin-top: 15px;
             font-size: 16px;
-            transition: transform 0.2s ease;
+            cursor: pointer;
         }
 
         .action-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #96c93d, #00b09b);
+            background: linear-gradient(to right, #96c93d, #00b09b);
         }
 
         .message {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #ff6b6b;
+            font-size: 14px;
         }
 
-        .back-btn {
-            margin-top: 10px;
-            background: transparent;
-            border: 1px solid #ffd700;
+        .form-footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .form-footer a {
             color: #ffd700;
+            text-decoration: none;
         }
 
-        .back-btn:hover {
-            background-color: #ffd700;
-            color: black;
+        .form-footer a:hover {
+            text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Signup</h2>
 
-        <?php if (!empty($message)) echo "<p class='message'>$message</p>"; ?>
+<div class="form-container">
+    
+    <h2>Sign Up</h2>
+    <?php if (!empty($message)) echo "<div class='message'>$message</div>"; ?>
 
-        <form action="" method="POST">
-            <input type="text" name="name" placeholder="Enter Name" required>
-            <input type="email" name="email" placeholder="Enter Email" required>
-            <input type="password" name="password" placeholder="Enter Password" required>
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-            <input type="text" name="contactNo" placeholder="Enter Contact No" required>
-            <button type="submit" class="action-btn">Register</button>
-        </form>
+    <form method="POST" action="">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="phoneNumber" placeholder="Phone Number" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+        <input type="submit" name="signup" value="Sign Up" class="action-btn">
+    </form>
 
-        <button class="action-btn back-btn" onclick="window.location.href='login.php'">Go to Login</button>
+    <div class="form-footer">
+        Already have an account? <a href="login.php">Login</a>
     </div>
+</div>
+
 </body>
 </html>

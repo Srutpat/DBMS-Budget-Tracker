@@ -14,7 +14,7 @@ require 'PHPMailer-master/src/Exception.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'config.php'; // PDO $conn assumed
+require 'config.php'; // Assumes $conn is PDO
 
 $user_id = $_SESSION['userID'] ?? null;
 $user_email = '';
@@ -38,7 +38,6 @@ if ($user_id) {
         $budget_id = $stmt->fetchColumn();
 
         log_debug("Fetched budgetID: " . ($budget_id ?? 'Not found'));
-
     } catch (PDOException $e) {
         log_debug("PDO Error while fetching email/budgetID: " . $e->getMessage());
     }
@@ -51,18 +50,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $description = htmlspecialchars(trim($_POST['description'] ?? ''));
     $amount = floatval($_POST['amount'] ?? 0);
     $dateAdded = $_POST['dateAdded'] ?? date('Y-m-d');
+    $category_id = !empty($_POST['categoryID']) ? intval($_POST['categoryID']) : null;
 
     if ($user_id && $budget_id && !empty($description) && $amount > 0) {
         try {
-            $stmt = $conn->prepare("INSERT INTO expenses (userID, budgetID, description, amount, dateAdded, categoryID)");
+            // ✅ Fix: Proper SQL with VALUES
+            $stmt = $conn->prepare("INSERT INTO expenses (userID, budgetID, description, amount, dateAdded, categoryID)
+                VALUES (:userID, :budgetID, :description, :amount, :dateAdded, :categoryID)");
 
             $stmt->bindParam(':userID', $user_id, PDO::PARAM_INT);
             $stmt->bindParam(':budgetID', $budget_id, PDO::PARAM_INT);
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':amount', $amount);
             $stmt->bindParam(':dateAdded', $dateAdded);
-            $category_id = !empty($_POST['categoryID']) ? intval($_POST['categoryID']) : null;
-$stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
+            $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
 
             $stmt->execute();
 
@@ -77,7 +78,7 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
                     $mail->Host       = 'smtp.gmail.com';
                     $mail->SMTPAuth   = true;
                     $mail->Username   = 'budgettracker27@gmail.com';
-                    $mail->Password   = 'fnco fdub nzsj zxye';
+                    $mail->Password   = 'fnco fdub nzsj zxye'; // App password
                     $mail->SMTPSecure = 'tls';
                     $mail->Port       = 587;
 
@@ -95,7 +96,7 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
                     log_debug("Email successfully sent to $user_email.");
                     $_SESSION['success'] .= " Email sent.";
 
-                    // === New: Check remaining budget ===
+                    // Budget check
                     $stmt = $conn->prepare("SELECT totalBudget, lowBalanceThreshold FROM budget WHERE budgetID = :budgetID");
                     $stmt->bindParam(':budgetID', $budget_id, PDO::PARAM_INT);
                     $stmt->execute();
@@ -161,8 +162,6 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
     exit();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -195,6 +194,7 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
             text-align: center;
             backdrop-filter: blur(10px);
             animation: slideIn 0.7s ease-out forwards;
+            width: 450px;
         }
 
         @keyframes slideIn {
@@ -213,7 +213,7 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
             color: #ffd700;
         }
 
-        input {
+        input, select {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -224,14 +224,20 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
             font-size: 16px;
         }
 
-        input:focus {
+        select {
+            background-color: #2f3b52;
+            color: white;
+        }
+
+        select option {
+            background-color: #2f3b52;
+            color: white;
+        }
+
+        input:focus, select:focus {
             outline: none;
             border-color: #ffd700;
             background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
         }
 
         .action-btn {
@@ -242,7 +248,7 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            width: 100%;
+            width: 48%;
             margin-top: 15px;
             font-size: 16px;
             transition: transform 0.2s ease;
@@ -254,11 +260,14 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
         }
 
         .back-btn {
-            margin-top: 10px;
-            background: transparent;
-            border: 1px solid #ffd700;
-            color: #ffd700;
-        }
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    height: 40px;
+    width: 100%;
+}
+
 
         .back-btn:hover {
             background-color: #ffd700;
@@ -277,9 +286,23 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
         .success-message {
             color: #66ff99;
         }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .back-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
+
     <div class="form-container">
         <h2>Add New Expense</h2>
 
@@ -295,30 +318,33 @@ $stmt->bindParam(':categoryID', $category_id, PDO::PARAM_INT);
             <input type="text" name="description" placeholder="Expense Description" required>
             <input type="number" step="0.01" name="amount" placeholder="Amount (₹)" required>
             <input type="date" name="dateAdded" value="<?= date('Y-m-d') ?>" required>
-            <label for="category">Category</label>
-<select name="categoryID" id="category">
-    <option value="">-- Select Category --</option>
-    <?php
-        $catStmt = $conn->prepare("SELECT categoryID, categoryName FROM categories WHERE userID = :userID");
-        $catStmt->bindParam(':userID', $user_id, PDO::PARAM_INT);
-        $catStmt->execute();
-        $categories = $catStmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($categories as $cat) {
-            echo "<option value='{$cat['categoryID']}'>{$cat['categoryName']}</option>";
-        }
-    ?>
-</select>
+            <select name="categoryID" id="category" required>
+                <option value="">-- Select Category --</option>
+                <?php
+                    $catStmt = $conn->prepare("SELECT categoryID, categoryName FROM categories WHERE userID = :userID");
+                    $catStmt->bindParam(':userID', $user_id, PDO::PARAM_INT);
+                    $catStmt->execute();
+                    $categories = $catStmt->fetchAll(PDO::FETCH_ASSOC);
 
-            <button type="submit" class="action-btn">Add Expense</button>
+                    foreach ($categories as $cat) {
+                        echo "<option value='{$cat['categoryID']}'>{$cat['categoryName']}</option>";
+                    }
+                ?>
+            </select>
+
+            <!-- Moved Add Expense button here -->
+            <div class="button-container">
+                <button type="submit" class="action-btn">Add Expense</button>
+                <button type="button" class="action-btn" onclick="window.location.href='add_category.php'">Add New Category</button>
+            </div>
         </form>
-        <h3>Add New Category</h3>
-<form method="POST" action="add_category.php">
-    <input type="text" name="categoryName" placeholder="Enter Category Name" required>
-    <button type="submit" class="action-btn">Add Category</button>
-</form>
 
-        <button class="action-btn back-btn" onclick="window.location.href='dashboard.php'">Go to Dashboard</button>
+        <!-- Go to Dashboard button below the row -->
+        <div class="back-btn-container">
+            <button class="back-btn" onclick="window.location.href='dashboard.php'">Go to Dashboard</button>
+        </div>
     </div>
+
 </body>
 </html>
